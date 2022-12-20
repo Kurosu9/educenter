@@ -1,0 +1,17 @@
+1) Salmarbekova Gulina, Jalanbekov Malik: History
+2) Osmonkulova Merim, Yrysbekova Jildiz, Bayalinova Bermet: Kyrgyz Language
+3) David Smith, Alex Bred, Decker Paul: English Language
+4) David Smith, Alex Bred, Decker Paul: Speaking
+5) Andrey Stepanovich, Matkerimov Jenish: PE(Physical Education)
+6) Karmyshev Abiy, Mehmet Type, Ilginch Ahmet: Mathematics
+7) Irina Victorovna, Tatyana Anatolyevna, Ivan Maksimov: Russian Language
+8) Irina Victorovna, Tatyana Anatolyevna, Ivan Maksimov: Literature
+9) Belyaeva Nastya, Esekov Amantur: Geography
+10) Stapanov Andrey, Wiliam Alen: Chemistry
+11) Belekov Arthur, Vladimir Andreyevich: Physics
+12) Chris John, Beyshenalieva Aygul: Biology
+13) Maksatbekov Beksultan, Nurzataev Murat: Informatics
+14) Karmyshev Abiy, Mehmet Type, Ilginch Ahmet: Geomtry
+15) Belekov Arthur: Astronomy
+16) Jorobekov Islam: Military
+17) David Smith, Alex Bred, Decker Paul: Reading

@@ -1,0 +1,17 @@
+1) History
+2) Kyrgyz Language
+3) English Language
+4) Speaking
+5) PE(Physical Education)
+6) Mathematics
+7) Russian Language
+8) Literature
+9) Geography
+10) Chemistry
+11) Physics
+12) Biology
+13) Informatics
+14) Geomtry
+15) Astronomy
+16) Military
+17) Reading

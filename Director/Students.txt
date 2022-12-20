@@ -1,0 +1,17 @@
+1) History: 400 students
+2) Kyrgyz Language: 400 students
+3) English Language: 400 students
+4) Speaking: 400 students
+5) PE(Physical Education): 400 students
+6) Mathematics: 400 students
+7) Russian Language: 400 students
+8) Literature: 400 students
+9) Geography: 400 students
+10) Chemistry: 200 students
+11) Physics: 200 students
+12) Biology: 200 students
+13) Informatics: 400 students
+14) Geomtry: 160 students
+15) Astronomy: 160 students
+16) Military: 160 students
+17) Reading: 160 students 

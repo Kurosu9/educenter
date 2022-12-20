@@ -1,0 +1,13 @@
+1) History - 3, 5, 4, 5, 5
+2) Kyrgyz Language - 2, 5, 5, 4, 5
+3) English Language - 3, 5, 5, 5
+4) Speaking - 5, 4, 5
+5) PE(Physical Education) - 5, 4
+6) Mathematics - 5, 4, 5, 3, 5, 5
+7) Russian Language - 5, 4, 5, 3, 3, 4, 5
+8) Geography - 5, 5, 5, 4
+9) Chemistry - 3, 4, 5, 5, 3
+10) Physics - 5, 5, 5, 4, 3, 5
+11) Biology - 5, 3
+12) Informatics - 5, 5, 5
+13) Geomtry - 5, 4
