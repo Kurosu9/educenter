@@ -239,7 +239,7 @@ class Try {
                     case "Action4":
                     case "4":
                         System.out.println("ДОБАВИТЬ УЧИТЕЛЯ");
-                        action4("C:\\Users\\User\\OneDrive\\Рабочий стол\\Универ\\OOP\\Project\\Director\\Teacher.txt");
+                        action4("C:/Users/User/OneDrive/Рабочий стол/Универ/OOP/Project/Director/Teachers.txt");
                         directorActions();
                         break;
                     case "action5":
@@ -248,7 +248,7 @@ class Try {
                         System.out.println("УДАЛИТЬ УЧИТЕЛЯ");
                         String name = sc.nextLine();
                         try {
-                            action5("C:\\Users\\User\\OneDrive\\Рабочий стол\\Универ\\OOP\\Project\\Director\\Teacher.txt", name);
+                            action5("C:\\Users\\User\\OneDrive\\Рабочий стол\\Универ\\OOP\\Project\\Director\\Teachers.txt", name);
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
@@ -337,6 +337,7 @@ class Try {
                 while ((reader.readLine()) != null) {
                     writer.write(addTeacher);
                     writer.newLine();
+                    break;
                 }
 
                 reader.close();
@@ -348,7 +349,7 @@ class Try {
 
         public static void action5(String filePath, String name) throws IOException {
             File inputFile = new File(filePath);
-            File tempFile = new File(inputFile.getAbsolutePath() + ".tmp");
+            File tempFile = new File(inputFile.getAbsolutePath() + ".txt");
 
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
@@ -393,7 +394,7 @@ class Try {
 
         public static void action7(String filePath, String name) throws IOException {
             File inputFile = new File(filePath);
-            File tempFile = new File(inputFile.getAbsolutePath() + ".tmp");
+            File tempFile = new File(inputFile.getAbsolutePath() + ".txt");
 
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
