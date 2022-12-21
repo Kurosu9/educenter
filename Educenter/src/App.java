@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
+
+import javax.management.RuntimeErrorException;
+
 import java.util.ArrayList;
 
 class Try {
@@ -236,28 +239,38 @@ class Try {
                     case "Action4":
                     case "4":
                         System.out.println("ДОБАВИТЬ УЧИТЕЛЯ");
-                        action4();
+                        action4("C:\\Users\\User\\OneDrive\\Рабочий стол\\Универ\\OOP\\Project\\Director\\Teacher.txt");
                         directorActions();
                         break;
                     case "action5":
                     case "Action5":
                     case "5":
                         System.out.println("УДАЛИТЬ УЧИТЕЛЯ");
-                        action5();
+                        String name = sc.nextLine();
+                        try {
+                            action5("C:\\Users\\User\\OneDrive\\Рабочий стол\\Универ\\OOP\\Project\\Director\\Teacher.txt", name);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                         directorActions();
                         break;
                     case "action6":
                     case "Action6":
                     case "6":
                         System.out.println("ДОБАВИТЬ СТУДЕНТА");
-                        // action6();
+                        action6("C:\\Users\\User\\OneDrive\\Рабочий стол\\Универ\\OOP\\Project\\Director\\Student.txt");
                         directorActions();
                         break;
                     case "action7":
                     case "Action7":
                     case "7":
                         System.out.println("УДАЛИТЬ СТУДЕНТА");
-                        // action7();
+                        String name1 = sc.nextLine();
+                        try {
+                            action7("C:\\Users\\User\\OneDrive\\Рабочий стол\\Универ\\OOP\\Project\\Director\\Student.txt", name1);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                         directorActions();
                         break;
                     default:
@@ -314,58 +327,93 @@ class Try {
             }
         }
 
-        public static void action4() {
+        public static void action4(String toPath){
             try {
-                BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\ainura_inai\\IdeaProjects\\Sample\\src\\dos.txt"));
-                HashMap<String, Integer> d = new HashMap<>();
-                while (br.ready()) {
-                    String line = br.readLine();
-                    if (d.containsKey(line)) {
-                        d.put(line, (int) (d.get(line) + 1));
-                    } else {
-                        d.put(line, 1);
-                    }
+                Scanner sc = new Scanner(System.in);
+                String addTeacher = sc.nextLine();
+                BufferedReader reader = new BufferedReader(new FileReader(toPath));
+                BufferedWriter writer = new BufferedWriter(new FileWriter(toPath, true));
+
+                while ((reader.readLine()) != null) {
+                    writer.write(addTeacher);
+                    writer.newLine();
                 }
-                System.out.println(d);
-                String s = "dsd";
-                int m = 100;
-                for (String i : d.keySet()) {
-                    if (d.get(i) < m) {
-                        m = d.get(i);
-                        s = i;
-                    }
-                }
-                System.out.println("Минимальное количество бытовой техники:"+ s);
-                br.close();
+
+                reader.close();
+                writer.close();
             } catch (IOException e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
 
-        public static void action5() {
+        public static void action5(String filePath, String name) throws IOException {
+            File inputFile = new File(filePath);
+            File tempFile = new File(inputFile.getAbsolutePath() + ".tmp");
+
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.contains(name)) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            }
+
+            reader.close();
+            writer.close();
+
+            if (inputFile.delete()) {
+                throw new IOException("Your file can't be deleted!");
+            }
+            if (!tempFile.renameTo(inputFile)) {
+                throw new IOException("Your file can't be renamed!");
+            }
+        }
+
+        public static void action6(String toPath){
             try {
-                BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\ainura_inai\\IdeaProjects\\Sample\\src\\dos.txt"));
-                System.out.print("Доставленная бытовая техника ");
-                int countLine = 0;
-                while (br.ready()) {
-                    System.out.print(br.readLine() + ", ");
-                    countLine++;
+                Scanner sc = new Scanner(System.in);
+                String addTeacher = sc.nextLine();
+                BufferedReader reader = new BufferedReader(new FileReader(toPath));
+                BufferedWriter writer = new BufferedWriter(new FileWriter(toPath, true));
+
+                while ((reader.readLine()) != null) {
+                    writer.write(addTeacher);
+                    writer.newLine();
                 }
-                System.out.println("Количество = " + countLine);
-                BufferedReader br1 = new BufferedReader(new FileReader("C:\\Users\\ainura_inai\\IdeaProjects\\Sample\\src\\zak.txt"));
-                System.out.print("Заказанная бытовая техника ");
-                int countline = 0;
-                while (br1.ready()) {
-                    System.out.print(br1.readLine() + ", ");
-                    countline++;
-                }
-                System.out.println("Количество = " + countline);
-                br1.close();
-                br.close();
-            } catch (FileNotFoundException e) {
-                System.out.println(e);
+
+                reader.close();
+                writer.close();
             } catch (IOException e) {
-                System.out.println(e);
+                e.printStackTrace();
+            }
+        }
+
+        public static void action7(String filePath, String name) throws IOException {
+            File inputFile = new File(filePath);
+            File tempFile = new File(inputFile.getAbsolutePath() + ".tmp");
+
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.contains(name)) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            }
+
+            reader.close();
+            writer.close();
+
+            if (inputFile.delete()) {
+                throw new IOException("Your file can't be deleted!");
+            }
+            if (!tempFile.renameTo(inputFile)) {
+                throw new IOException("Your file can't be renamed!");
             }
         }
 
